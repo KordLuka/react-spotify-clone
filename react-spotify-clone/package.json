@@ -13,9 +13,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@cfaester/enzyme-adapter-react-18": "^0.7.1",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "enzyme": "^3.11.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
@@ -39,6 +41,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
+    "@types/enzyme": "^3.10.13",
     "@types/jest": "^29.5.4",
     "autoprefixer": "^10.4.15",
     "eslint-plugin-jest-dom": "^5.1.0",
