@@ -1,8 +1,6 @@
-"use client";
 
 import { IconType } from "react-icons";
 import { twMerge } from "tailwind-merge";
-
 
 interface CircleButtonProps {
   icon: IconType;

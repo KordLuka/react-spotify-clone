@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { RxBookmark } from "react-icons/rx";
 
 const meta = {
-  title: "Components/CircleButton",
+  title: "Components/Buttons/CircleButton",
   component: CircleButton,
   parameters: {
     layout: "centered",
