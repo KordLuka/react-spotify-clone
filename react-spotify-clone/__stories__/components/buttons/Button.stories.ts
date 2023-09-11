@@ -6,6 +6,9 @@ const meta = {
   component: Button,
   parameters: {
     layout: "centered",
+    nextjs: {
+      appDirectory: true,
+    },
   },
   tags: ["autodocs"],
   argTypes: {},

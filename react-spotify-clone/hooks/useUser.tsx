@@ -1,8 +1,8 @@
 import { Subscription, UserDetails } from "@/types/user";
-import { User } from "@supabase/auth-helpers-nextjs";
 import {
   useSessionContext,
   useUser as useSupaUser,
+  User
 } from "@supabase/auth-helpers-react";
 import { createContext, useContext, useEffect, useState } from "react";
 import { PostgrestSingleResponse } from "@supabase/supabase-js";
@@ -46,6 +46,7 @@ export const MyUserContextProvider = (props: Props) => {
 
   useEffect(() => {
     if (user && !isLoadingData && !userDetails && !subscription) {
+
       setIsLoadingData(true);
 
       Promise.allSettled([getUserDetails(), getSubscription()]).then(
@@ -68,6 +69,7 @@ export const MyUserContextProvider = (props: Props) => {
       setUserDetails(null);
       setSubscription(null);
       setIsLoadingData(false);
+    } else {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, isLoadingData]);
