@@ -7,6 +7,9 @@ const meta = {
   component: Box,
   parameters: {
     layout: "centered",
+    nextjs: {
+      appDirectory: true,
+    },
   },
   tags: ["autodocs"],
   argTypes: {

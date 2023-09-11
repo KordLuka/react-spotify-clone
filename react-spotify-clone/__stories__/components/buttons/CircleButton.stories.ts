@@ -7,6 +7,9 @@ const meta = {
   component: CircleButton,
   parameters: {
     layout: "centered",
+    nextjs: {
+      appDirectory: true,
+    },
   },
   tags: ["autodocs"],
   argTypes: {},

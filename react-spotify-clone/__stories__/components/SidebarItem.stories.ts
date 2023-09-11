@@ -8,6 +8,9 @@ const meta = {
   component: SidebarItem,
   parameters: {
     layout: "centered",
+    nextjs: {
+      appDirectory: true,
+    },
   },
   tags: ["autodocs"],
   argTypes: {},
