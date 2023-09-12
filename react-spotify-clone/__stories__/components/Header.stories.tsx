@@ -1,10 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Header from "../../components/Header";
+import UserProvider from "@/providers/UserProvider";
+import ModalProvider from "@/providers/ModalProvider";
 
 const meta = {
   title: "Components/Header",
   component: Header,
+  decorators: [
+    (Story) => (
+      <UserProvider>
+        <Story />
+      </UserProvider>
+    ),
+  ],
   parameters: {
     layout: "centered",
     nextjs: {
