@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import useAuthModal from './../../hooks/useAuthModal';
+import { useAuthModal } from './../../hooks/useAuthModal';
 
 describe('useAuthModal Hook', () => {
     it('should initialize with isOpen as false', () => {

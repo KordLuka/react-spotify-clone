@@ -6,12 +6,8 @@ export interface AuthModalProps {
   onClose: () => void;
 }
 
-const useAuthModal = create<AuthModalProps>((set) => ({
+export const useAuthModal = create<AuthModalProps>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
-
-export { useAuthModal };
-
-export default useAuthModal;
