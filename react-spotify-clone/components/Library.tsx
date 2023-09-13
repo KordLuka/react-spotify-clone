@@ -2,18 +2,22 @@
 
 import { TbPlaylist } from 'react-icons/tb'
 import { AiOutlinePlus } from 'react-icons/ai'
-import useAuthModal from '@/hooks/useAuthModal'
+import { useAuthModal } from '@/hooks/useAuthModal'
 import { useUser } from '@/hooks/useUser'
 import useUploadModal from '@/hooks/useUploadModal'
+import { Song } from '@/types/song'
+interface LibraryProps {
+    songs: Song[]
+}
 
-const Library = () => {
-    const { onOpen } = useAuthModal();
+const Library: React.FC<LibraryProps> = ({ songs }) => {
+    const authModal = useAuthModal();
     const uploadModal = useUploadModal();
     const { user } = useUser();
 
     const onClick = () => {
         if (!user) {
-            return onOpen();
+            return authModal.onOpen();
         }
 
         return uploadModal.onOpen();
@@ -45,7 +49,9 @@ const Library = () => {
             <div
                 data-testid="cy-library-liked-songs-container"
                 className="flex flex-col gap-y-2 mt-4 px-3">
-                List of songs
+                {songs.map(item => (
+                    <div key={item.id}>{item.title}</div>
+                ))}
             </div>
         </div>
     )

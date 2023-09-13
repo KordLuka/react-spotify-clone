@@ -1,8 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+
+
+import { render, screen, fireEvent, } from '@testing-library/react';
 import Library from '@/components/Library'
 import UserProvider from '@/providers/UserProvider';
-import * as HookToSpy from './../../hooks/useAuthModal'
-import { MyUserContextProvider } from '@/hooks/useUser';
 
 it('should render the Library component with the correct title', () => {
     // given
@@ -23,56 +23,12 @@ it('should check if the Plus button triggers the onClick function', () => {
     const icon: HTMLElement = screen.getByTestId('cy-library-plus-icon');
     icon.onclick = onClickMock;
 
-    // when  
+    // when
     fireEvent.click(icon);
 
     // then
     expect(onClickMock).toHaveBeenCalledTimes(1);
 });
-
-// TODO: Figure out why this test still fails!!!!!!!!!!
-// it('should check if the Plus button triggers the onClick function2', () => {
-//     const onOpenSpy = jest.fn();
-//     jest.spyOn(HookToSpy, 'useAuthModal').mockImplementation(() => {
-//         return {
-//             onOpen: onOpenSpy,
-//         };
-//     });
-
-//     // const onOpenSpy = jest.fn();
-
-//     // jest.mock('./../../hooks/useAuthModal', () => {
-//     //     return {
-//     //         __esModule: true,
-//     //         default: {
-//     //             isOpen: true,
-//     //             lorem: 'hehehehe',
-//     //             onOpen: onOpenSpy,
-//     //             onClose: jest.fn(),
-//     //         },
-//     //     };
-//     // });
-
-//     render(
-//         <MyUserContextProvider value={{
-//             accessToken: null,
-//             user: null,
-//             userDetails: null,
-//             isLoading: false,
-//             subscription: null
-//         }}>
-//             <Library />
-//         </MyUserContextProvider>
-//     )
-
-//     const icon: HTMLElement = screen.getByTestId('cy-library-plus-icon');
-
-//     // when  
-//     fireEvent.click(icon);
-
-//     // then
-//     expect(onOpenSpy).toHaveBeenCalledTimes(1);
-// });
 
 it('should render the Library component with a list of songs', () => {
     // given
