@@ -40,7 +40,6 @@ it('should check if the Plus button triggers the onClick function2', async () =>
     await user.click(icon);
 
     // then
-    console.log("2: ", result.current.isOpen)
     expect(result.current.isOpen).toBe(false);
     expect(result.current.onOpen).toHaveBeenCalledTimes(1);
 });
